@@ -1,0 +1,244 @@
+footer {
+  position: relative;
+  z-index: 1;
+  font-family: $second-font;
+
+  .wrap:first-child {
+    padding-bottom: 0;
+    padding-top: 100px;
+
+    @media only screen and (min-width : 992px){
+      padding-top: 168px;
+    }
+  }
+  .wrap:last-child {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+
+  .wrap-foot {
+    position: relative;
+    max-width: 1085px;
+    width: 100%;
+    margin: auto;
+    padding-top: 30px;
+    padding-right: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media only screen and (min-width : 580px){
+      flex-flow: row;
+    }
+
+    @media only screen and (min-width : 850px){
+      padding-right: 290px;
+    }
+  }
+
+  .description {
+    width: 100%;
+
+    @media only screen and (min-width : 580px){
+      width: calc(100% - 280px);
+    }
+
+    @media only screen and (min-width : 850px){
+      min-height: 200px;
+    }
+
+    @media only screen and (min-width : 1040px){
+      width: calc(100% - 330px);
+      min-height: inherit;
+    }
+
+    .title {
+      display: block;
+      @include fontSize(21px);
+      padding-bottom: 20px;
+      text-align: center;
+
+      @media only screen and (min-width : 580px){
+        text-align: left;
+      }
+    }
+
+    .text {
+      text-align: left;
+    }
+  }
+
+  form {
+    width: 100%;
+    padding-top: 40px;
+
+    @media only screen and (min-width : 580px){
+      max-width: 250px;
+      margin-left: 15px;
+      padding-top: 0;
+    }
+
+    input {
+      width: 100%;
+      min-height: 40px;
+      margin-top: 20px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    .btn {
+      width: 100%;
+      min-height: 40px;
+    }
+
+    .title {
+      display: block;
+      @include fontSize(22px);
+      text-transform: uppercase;
+      text-align: center;
+
+      @media only screen and (min-width : 580px){
+        text-align: left;
+      }
+    }
+  }
+
+  .menu-foot {
+    display: none;
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    @media only screen and (min-width : 655px){
+      display: block;
+    }
+
+    @media only screen and (min-width : 850px){
+      margin-top: 100px;
+    }
+
+    @media only screen and (min-width : 1040px){
+      margin-top: 30px;
+    }
+
+    > ul {
+      max-width: 1085px;
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      margin: auto;
+
+      @media only screen and (min-width : 655px){
+        flex-flow: row wrap;
+      }
+
+      @media only screen and (min-width : 1040px){
+        padding-right: 290px;
+      }
+    }
+
+    li {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    li + li {
+      @media only screen and (min-width : 655px){
+        padding-left: 15px;
+      }
+    }
+
+    a {
+      position: relative;
+      color: #fff;
+      font-family: $second-font;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -3px;
+        width: 0;
+        height: 1px;
+        border-bottom: 1px solid #fff;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        background: none;
+        &:before {
+          width: 110%;
+        }
+      }
+    }
+  }
+
+  .wrap-foot.soctheme {
+    padding-top: 50px;
+    padding-right: 0;
+    flex-flow: column;
+
+    @media only screen and (min-width : 580px){
+      flex-flow: row;
+      align-items: center;
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+
+    @media only screen and (min-width : 580px){
+      width: 50%;
+      padding-right: 15px;
+      justify-content: flex-start;
+    }
+
+    li + li {
+      margin-left: 30px;
+    }
+
+    a:hover img {
+      transform: scale(1.2);
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      transition: 0.2s;
+    }
+  }
+
+  .name-theme {
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+
+    @media only screen and (min-width : 580px){
+      width: 50%;
+      text-align: right;
+      padding-top: 0;
+    }
+  }
+
+  .photo-product {
+    display: none;
+    width: 272px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    @media only screen and (min-width : 850px){
+      display: block;
+    }
+  }
+}

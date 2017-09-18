@@ -1,0 +1,165 @@
+.our-contacts {
+  position: relative;
+  z-index: 2;
+  
+  .contacts {
+    position: relative;
+    max-width: 1040px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 55px;
+
+    @media only screen and (min-width : 650px){
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  .item {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    min-height: 210px;
+    border: 2px solid #fff;
+    border-top: 0;
+    margin-top: 30px;
+    padding: 50px 10px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    span {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: calc(50% - 23px);
+      height: 1px;
+      border-top: 2px solid #fff;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      right: 0;
+      top: 0;
+    }
+
+    .triangle-left-top,
+    .triangle-right-top {
+      top: 4px;
+    }
+
+    img {
+      width: 26px;
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .title {
+      max-width: 240px;
+      width: 100%;
+      border-bottom: 1px solid #fff;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      @include fontSize(20px);
+      text-transform: uppercase;
+
+      @media only screen and (min-width : 768px){
+        @include fontSize(25px);
+      }
+    }
+
+    .text {
+      font-family: $second-font;
+      @include fontSize(19px);
+
+      p {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .item + .item {
+    @media only screen and (min-width : 650px){
+      margin-left: 15px;
+    }
+  }
+
+  .question {
+    .title {
+      @include fontSize(30px);
+      text-transform: uppercase;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1040px;
+    width: 100%;
+    margin: auto;
+    padding-top: 35px;
+
+    >div {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+
+      @media only screen and (min-width : 650px){
+        flex-flow: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  input {
+    width: 100%;
+    margin-top: 15px;
+
+    @media only screen and (min-width : 650px){
+      max-width: 320px;
+    }
+  }
+
+  input + input {
+    @media only screen and (min-width : 650px){
+      margin-left: 15px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    max-height: 88px;
+    margin: 40px 0;
+  }
+
+  .btn {
+    width: auto;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}

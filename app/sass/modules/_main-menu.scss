@@ -1,0 +1,127 @@
+.collapse-button {
+  background-color: rgba($main-color,0.5);
+  transition: 0.2s;
+  left: 15px;
+  border-radius: 0;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgba($main-color, 0.8);
+  }
+
+  .icon-bar {
+    margin-bottom: 0;
+    background-color: $bg-color;
+  }
+}
+
+.active-btn-close {
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 3px;
+    transform: translateX(-50%);
+    content: url("../img/009-delete-menu.svg");
+    width: 20px;
+    height: 20px;
+  }
+  .icon-bar {
+    opacity: 0;
+  }
+}
+
+
+.menu-collapser {
+  position: fixed;
+  z-index: 202;
+  bottom: 12px;
+  width: 0;
+  background-color: rgba($bg-color, 0);
+}
+
+#navigation {
+  position: fixed;
+  z-index: 200;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: rgba(64, 46, 41, 0.8);
+  padding: 15px 0;
+
+  @media only screen and (min-width : 991px){
+    position: relative;
+    flex-flow: wrap;
+    min-height: 81px;
+    height: auto;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    opacity: 0.2;
+  }
+  &:before {
+    top: 7px;
+  }
+  &:after {
+    bottom: 7px;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    @media only screen and (min-width : 991px){
+      justify-content: center;
+    }
+  }
+
+  li + li {
+    @media only screen and (min-width : 991px){
+      padding-left: 40px;
+    }
+  }
+
+  a {
+    position: relative;
+    color: #fff;
+    font-family: $second-font;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -3px;
+      width: 0;
+      height: 1px;
+      border-bottom: 1px solid #fff;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      background: none;
+      &:before {
+        width: 110%;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+@import "bourbon";
+@import "vars";
+
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: #666;
+	}
+
+body input:required:valid,
+body textarea:required:valid {
+	color: #666;
+}
+
+
+//for iPhone
+input, textarea {
+	box-shadow: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+
+	outline: none;
+}
+
+body {
+	margin: 0 auto;
+	position: relative;
+	font-family: $default-font;
+	overflow-x: hidden;
+	background: #2f211d;
+	color: #fff;
+	line-height: 1.2;
+}
+
+html {
+	font-size: 14px;
+	overflow-x: hidden;
+
+	@media only screen and (min-width : 992px){
+		font-size: 16px;
+	}
+}
+
+
+//Mixin to calculate REM
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+	font-size: $size; //Fallback in px
+	font-size: calculateRem($size);
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+
+.bg {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.marg-top,
+footer {
+	margin-top: -150px;
+}
+
+.wrap {
+	max-width: 1400px;
+	margin: 0 auto;
+	position: relative;
+	padding: 168px 15px 110px;
+	text-align: center;
+
+	@media only screen and (min-width : 992px){
+		padding-bottom: 140px;
+	}
+}
+
+.title {
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	@include fontSize(20px);
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+
+	@media only screen and (min-width : 480px){
+		@include fontSize(30px);
+	}
+
+	@media only screen and (min-width : 768px){
+		@include fontSize(40px);
+	}
+}
+
+.decoration {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 25px;
+
+	img {
+		width: 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(135deg);
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		width: calc(50% - 20px);
+		height: 3px;
+		background: #fff;
+	}
+}
+
+.btn {
+	width: 120px;
+	min-height: 50px;
+	background-color: rgba($main-color ,1);
+	border: 2px solid $main-color;
+	cursor: pointer;
+	color: #3a2019;
+	font-family: $second-font;
+	@include fontSize(19px);
+	font-weight: 700;
+	text-transform: uppercase;
+	outline: none;
+	transition: 0.2s;
+
+	&:hover {
+		background-color: rgba($main-color, 0);
+		color: $main-color;
+	}
+}
+
+.triangle {
+	position: absolute;
+	width: 14px;
+	border: 14px solid transparent;
+}
+
+.triangle-left-top {
+	top: 2px;
+	left: 2px;
+	border-left: 14px solid #fff;
+	border-top: 14px solid #fff;
+}
+
+.triangle-left-bottom {
+	bottom: 2px;
+	left: 2px;
+	border-bottom: 14px solid #fff;
+	border-left: 14px solid #fff;
+}
+
+.triangle-right-top {
+	top: 2px;
+	right: 2px;
+	border-top: 14px solid #fff;
+	border-right: 14px solid #fff;
+}
+
+.triangle-right-bottom {
+	bottom: 2px;
+	right: 2px;
+	border-bottom: 14px solid #fff;
+	border-right: 14px solid #fff;
+}
+
+
+form {
+	position: relative;
+}
+
+input, textarea {
+	border: 1px solid #fff;
+	background-color: rgba(42, 42, 42, 0);
+	padding: 10px 18px;
+	color: #dfdfdf;
+	font-family: $second-font;
+	text-transform: uppercase;
+
+	&::-webkit-input-placeholder {color: #dfdfdf;}
+	&::-moz-placeholder {color: #dfdfdf;}
+	&:-moz-placeholder {color: #dfdfdf;}
+	&:-ms-input-placeholder {color: #dfdfdf;}
+}
+
+
+
+
+
+
+
+

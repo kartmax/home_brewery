@@ -1,0 +1,44 @@
+.brewers {
+  position: relative;
+  z-index: 5;
+
+  .brewers-slider {
+    max-width: 660px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    @media only screen and (min-width : 1050px) {
+      max-width: 1020px;
+    }
+  }
+
+  .item {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    min-height: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0);
+
+    p {
+      font-family: $second-font;
+    }
+  }
+
+  .name {
+    display: inline-block;
+    @include fontSize(22px);
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+  }
+
+  .position {
+    padding-top: 10px;
+  }
+}

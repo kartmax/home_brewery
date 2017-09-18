@@ -1,0 +1,164 @@
+header {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 130px;
+  z-index: 8;
+
+  @media only screen and (min-width : 1025px){
+    padding-bottom: 240px;
+  }
+
+  .logo {
+    position: relative;
+    margin-top: 54px;
+    text-align: center;
+  }
+
+  /**********************BLOCK-MAIN-TITLE*************************/
+
+  .main-title {
+    position: relative;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 980px;
+    margin: 95px 15px 0;
+    padding: 56px 30px 50px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-top: 0;
+
+    @media only screen and (min-width : 991px){
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media only screen and (min-width : 1025px){
+      border-bottom: 0;
+      padding-bottom: 106px;
+    }
+
+    @media only screen and (min-width : 1030px){
+      margin: 95px auto 0;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: calc(50% - 40px);
+      border-top: 1px solid #fff;
+    }
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+
+    .triangle-left-top,
+    .triangle-right-top {
+      top: 3px;
+
+      @media only screen and (min-width : 993px){
+        top: 3.5px;
+      }
+    }
+
+    .triangle-center-bottom {
+      position: absolute;
+      bottom: -114px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 100px solid transparent;
+      border-top: 10px solid #fff;
+
+      @media only screen and (min-width : 480px){
+        bottom: -169px;
+        border: 150px solid transparent;
+        border-top: 15px solid #fff;
+      }
+
+      @media only screen and (min-width : 1025px){
+        bottom: -197px;
+      }
+    }
+
+    .liner-bottom {
+      display: none;
+      @media only screen and (min-width : 1025px){
+        display: block;
+      }
+    }
+
+    svg {
+      position: absolute;
+        width: 100%;
+        bottom: -131px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .icon-title {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      width: 60px;
+      transform: translateX(-50%) rotate(135deg);
+    }
+
+    h1 {
+      @include fontSize(30px);
+      width: 100%;
+      padding: 13px 0 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-top: 1px solid #fff;
+
+      @media only screen and (min-width : 480px){
+        @include fontSize(40px);
+      }
+
+      @media only screen and (min-width : 768px){
+        @include fontSize(55px);
+      }
+    }
+
+    .decor-title-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .left-decor {
+        transform: rotate(90deg);
+        width: 20px;
+        margin-left: -1px;
+      }
+
+      .right-decor {
+        transform: rotate(-90deg);
+        width: 20px;
+        margin-right: -1px;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        flex: 1;
+        height: 2px;
+        background: #fff;
+      }
+    }
+
+    p {
+      position: relative;
+      max-width: 460px;
+      padding: 0 15px;
+      font-family: $second-font;
+      @include fontSize(18px);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,338 @@
+.upcoming-events {
+  position: relative;
+  z-index: 4;
+
+  .wrap .events {
+    position: relative;
+    max-width: 920px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-family: $second-font;
+  }
+
+  .item {
+    position: relative;
+    min-height: 150px;
+    padding: 20px;
+    background-color: rgba(18, 18, 18, 0.5);
+
+    > div {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #fff;
+      padding: 20px;
+      flex-flow: wrap;
+
+      @media only screen and (min-width : 580px){
+       padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      @media only screen and (min-width : 680px){
+        flex-flow: nowrap;
+      }
+    }
+
+    .triangle {
+      width: 8px;
+      border: 8px solid transparent;
+    }
+
+    .triangle-left-top {
+      border-left: 8px solid #fff;
+      border-top: 8px solid #fff;
+    }
+
+    .triangle-left-bottom {
+      border-bottom: 8px solid #fff;
+      border-left: 8px solid #fff;
+    }
+
+    .triangle-right-top {
+      border-top: 8px solid #fff;
+      border-right: 8px solid #fff;
+    }
+
+    .triangle-right-bottom {
+      border-bottom: 8px solid #fff;
+      border-right: 8px solid #fff;
+    }
+
+    .map {
+      opacity: 0;
+      position: absolute;
+      top: -30px;
+      left: 200%;
+      max-width: 600px !important;
+      width: 100% !important;
+      min-height: 600px !important;
+      border: 1px solid #fff;
+    }
+
+    .gm-style-cc,
+    .gm-svpc,
+    .gmnoprint {
+      display: none;
+    }
+
+    .active-map {
+      opacity: 1;
+      z-index: 100;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .close-map {
+      display: none;
+      position: absolute;
+      z-index: 101;
+      top: -23px;
+      right: 15px !important;
+      padding: 0;
+      height: 20px;
+      background: none;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+
+      @media only screen and (min-width : 650px){
+        right: 40px !important;
+      }
+
+      @media only screen and (min-width : 700px){
+        right: 60px !important;
+      }
+
+      @media only screen and (min-width : 750px){
+        right: 80px !important;
+      }
+
+      @media only screen and (min-width : 800px){
+        right: 110px !important;
+      }
+
+      @media only screen and (min-width : 850px){
+        right: 130px !important;
+      }
+
+      @media only screen and (min-width : 900px){
+        right: 160px !important;
+      }
+
+      @media only screen and (min-width : 960px){
+        top: -23px;
+        right: 132px !important;
+      }
+
+      &:hover svg {
+        transform: scale(1.2);
+      }
+
+      svg {
+        transition: 0.2s;
+
+      }
+
+      path {
+        fill: $bg-color;
+        @media only screen and (min-width : 960px){
+          fill: #fff;
+        }
+      }
+    }
+
+    .description-event {
+      display: none;
+      z-index: 100;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      flex-flow: wrap;
+      max-width: 600px;
+      width: 100%;
+      padding: 25px 15px;
+      background: #fff;
+      color: $bg-color;
+
+      @media only screen and (min-width : 480px){
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .title {
+        position: relative;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 3px solid $bg-color;
+        @include fontSize(20px);
+
+        @media only screen and (min-width : 480px){
+          @include fontSize(25px);
+        }
+
+        @media only screen and (min-width : 768px){
+          @include fontSize(30px);
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: -24px;
+        right: -15px;
+        padding: 0;
+        height: 20px;
+        background: none;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+
+        @media only screen and (min-width : 480px){
+          top: -20px;
+        }
+
+        @media only screen and (min-width : 768px){
+          top: -20px;
+          right: -50px;
+        }
+
+        svg {
+          transition: 0.2s;
+
+        }
+
+        path {
+          fill: $bg-color;
+          @media only screen and (min-width : 768px){
+            fill: #fff;
+          }
+        }
+
+        &:hover svg {
+          transform: scale(1.2);
+        }
+      }
+
+      .text {
+        padding-top: 20px;
+        text-align: left;
+      }
+
+      .btn {
+        min-width: 150px;
+        margin: 20px auto 0;
+
+        &:hover {
+          color: $bg-color;
+          border-color: $bg-color;
+        }
+      }
+    }
+  }
+
+  .item + .item {
+    margin-top: 20px;
+  }
+
+  .data {
+    flex: 20%;
+    order: 1;
+    padding-right: 10px;
+  }
+
+  .number {
+    font-family: $default-font;
+    @include fontSize(45px);
+    font-weight: 700;
+  }
+
+  .month {
+    @include fontSize(17px);
+  }
+
+  .name-event {
+    position: relative;
+    flex: 100%;
+    @include fontSize(18px);
+    font-weight: 700;
+    text-transform: uppercase;
+    order: 3;
+    margin-top: 10px;
+    padding-top: 10px;
+
+    @media only screen and (min-width : 580px){
+      order: 2;
+      flex: 60%;
+      padding-top: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @media only screen and (min-width : 680px){
+      flex: auto;
+      max-width: 460px;
+      width: 100%;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      border-left: 0;
+      border-top: 1px solid #7d7d7d;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 1px;
+    }
+    &:after {
+      display: none;
+    }
+
+    @media only screen and (min-width : 580px){
+      &:before,
+      &:after {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 70px;
+      }
+      &:before {
+        border-left: 1px solid #7d7d7d;
+      }
+      &:after {
+        display: block;
+        right: 0;
+        border-right: 1px solid #7d7d7d;
+      }
+    }
+  }
+
+  .time {
+    flex: 20%;
+    order: 2;
+    @include fontSize(20px);
+    padding: 0 10px;
+
+    @media only screen and (min-width : 580px){
+      order: 3;
+    }
+  }
+
+  .btn {
+    order: 4;
+    width: 100%;
+    margin-top: 20px;
+
+    @media only screen and (min-width : 680px){
+      width: 150px;
+      margin-top: 0;
+    }
+  }
+}
