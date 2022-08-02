@@ -6,4 +6,4 @@ Home Brewery
 
 ==========================
 
-Lending dlya pivovarni.
+Landing page for a brewery.
